@@ -1,0 +1,85 @@
+
+/* car code css */
+ body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  height: 100vh;
+  width: 100vh;
+}
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+h1{
+  position: absolute;
+  top:0;
+  margin: 50px auto;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: 700;
+  color:white;
+  font-size: 50px;
+}
+.div{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-direction: column;
+  align-items: center;
+  height: 100px;
+  width : 100% ;
+  
+  background-color: rgb(54, 77, 91);
+  border: hidden;
+  box-shadow: inset 0 0 30px rgb(175, 144, 36);
+  overflow: hidden;
+}
+
+
+.div img{
+  width: 9%;
+  bottom: 10px;
+  transform: rotate(90deg);
+  animation: carMoving 5s alternate infinite;
+}
+
+.div::before{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  background-image: linear-gradient(90deg , #fff , #fff , 50% , transparent 50% , transparent 100%);
+  background-size: 50px;
+  animation: animate_oad 0.125s linear infinite;
+}
+
+
+@keyframes animate_road{
+  from {
+    background-position: 50px 0px;
+  }
+  to{
+    background-position: 0 0;
+  }
+}
+
+@keyframes carMoving{
+  0%{
+  transform: translateX(100%) translateY(10%) rotate(90deg);
+  }
+  15%{
+  transform: translateX(95%) translateY(15%)  rotate(90deg);
+  }
+  50%{
+  transform: translateX(-10%) translateY(-10%) rotate(90deg);
+  }
+  75%{
+  transform: translateX(-20%) translateY(0%) rotate(90deg);
+  }
+  100%{
+  transform: translateX(200%)translateY(0%)  rotate(90deg);
+  }
+} 
